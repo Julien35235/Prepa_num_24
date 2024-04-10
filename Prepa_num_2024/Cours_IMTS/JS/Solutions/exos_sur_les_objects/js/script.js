@@ -1,17 +1,3 @@
-/**
- * Exercices ecrivez une boucle 
- * pour récupérer tous les prénoms qui sont dans le tableau
- * listeStagiaire
- */
-
-for(let i=0;i<listesStagiaire.length;i++){
-    console.log(listesStagiaire[i].prenom);
-}
-
-for(let personn of listesStagiaire){
-    console.log(personn.prenom);
-}
-
 let inventaire = [
     {
         produit: "pommes",
