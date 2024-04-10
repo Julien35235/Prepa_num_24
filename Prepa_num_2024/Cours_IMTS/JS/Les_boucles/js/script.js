@@ -45,3 +45,13 @@ for(let i=0; i>= etudiants.length; i--){
     console.log[i];
 }
 
+/**
+ * Exercice : 
+ * Soit un tableau
+ * let etudiants=['adrien', 'hermine', 'kevin', 'antoine','maxime', 'lou'];
+ * 
+ * Ecrivez une boucle pour afficher dans la console 'Bonjour adrien, hermine, etc...'
+ * 
+ */
+
+
