@@ -74,3 +74,112 @@ const heroes = {
   let myPHeader=document.createElement('p');
   myPHeader.textContent=`Hometown : ${heroes.homeTown} || Formed : ${heroes.formed}`;
   myHeader.appendChild(myPHeader);
+
+  /**
+   * 3) Faîtes une boucle vous permettant pour chaque membres de l'équipe :
+   * - de créer une balise article dans la balise section déjà présente
+   * - dans cette balise article : 
+   *    - mettre dans h2 le nom du hero
+   *    - mettre dans une balise p son identité secrete
+   *    - mettre dans un autre p, son age
+   *    - mettre un 3eme p avec écrit dedans "Superpouvoirs"
+   *    - mettre une liste
+   *        - mettre dans cette liste un li par superpouvoir, avec le nom du pouvoir
+   */
+  /**
+   * // Cibler la balise <section> déjà présente
+let section = document.querySelector('section');
+
+// Boucle à travers chaque membre de l'équipe
+heroes.members.forEach(member => {
+    // Créer une balise <article>
+    let article = document.createElement('article');
+
+    // Créer une balise <h2> pour le nom du héros
+    let h2 = document.createElement('h2');
+    h2.textContent = member.name;
+
+    // Créer une balise <p> pour l'identité secrète
+    let secretIdentity = document.createElement('p');
+    secretIdentity.textContent = "Identité secrète : " + member.secretIdentity;
+
+    // Créer une balise <p> pour l'âge
+    let age = document.createElement('p');
+    age.textContent = "Âge : " + member.age;
+
+    // Créer une balise <p> pour "Superpouvoirs"
+    let superpowersTitle = document.createElement('p');
+    superpowersTitle.textContent = "Superpouvoirs";
+
+    // Créer une balise <ul> pour la liste des superpouvoirs
+    let powersList = document.createElement('ul');
+
+    // Boucle à travers chaque superpouvoir du membre
+    member.powers.forEach(power => {
+        // Créer une balise <li> pour chaque superpouvoir
+        let powerItem = document.createElement('li');
+        powerItem.textContent = power;
+        // Ajouter le superpouvoir à la liste
+        powersList.appendChild(powerItem);
+    });
+
+    // Ajouter tous les éléments créés à l'article
+    article.appendChild(h2);
+    article.appendChild(secretIdentity);
+    article.appendChild(age);
+    article.appendChild(superpowersTitle);
+    article.appendChild(powersList);
+
+    // Ajouter l'article à la balise <section>
+    section.appendChild(article);
+});
+   */
+
+// Avec la boucle for of
+// Cibler la balise <section> déjà présente
+let section = document.querySelector('section');
+
+// Boucle à travers chaque membre de l'équipe
+for (let member of heroes.members) {
+    // Créer une balise <article>
+    let article = document.createElement('article');
+
+    // Créer une balise <h2> pour le nom du héros
+    let h2 = document.createElement('h2');
+    h2.textContent = member.name;
+
+    // Créer une balise <p> pour l'identité secrète
+    let secretIdentity = document.createElement('p');
+    secretIdentity.textContent = "Identité secrète : " + member.secretIdentity;
+
+    // Créer une balise <p> pour l'âge
+    let age = document.createElement('p');
+    age.textContent = "Âge : " + member.age;
+
+    // Créer une balise <p> pour "Superpouvoirs"
+    let superpowersTitle = document.createElement('p');
+    superpowersTitle.textContent = "Superpouvoirs";
+
+    // Créer une balise <ul> pour la liste des superpouvoirs
+    let powersList = document.createElement('ul');
+
+    // Boucle à travers chaque superpouvoir du membre
+    for (let power of member.powers) {
+        // Créer une balise <li> pour chaque superpouvoir
+        let powerItem = document.createElement('li');
+        powerItem.textContent = power;
+        // Ajouter le superpouvoir à la liste
+        powersList.appendChild(powerItem);
+    }
+
+    // Ajouter tous les éléments créés à l'article
+    article.appendChild(h2);
+    article.appendChild(secretIdentity);
+    article.appendChild(age);
+    article.appendChild(superpowersTitle);
+    article.appendChild(powersList);
+
+    // Ajouter l'article à la balise <section>
+    section.appendChild(article);
+}
+// Fin de la boucle
