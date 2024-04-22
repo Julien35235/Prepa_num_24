@@ -140,7 +140,7 @@ heroes.members.forEach(member => {
 let section = document.querySelector('section');
 
 // Boucle à travers chaque membre de l'équipe
-for (let member of heroes.members) {
+for (let member of heroes.members){
     // Créer une balise <article>
     let article = document.createElement('article');
 
@@ -164,7 +164,7 @@ for (let member of heroes.members) {
     let powersList = document.createElement('ul');
 
     // Boucle à travers chaque superpouvoir du membre
-    for (let power of member.powers) {
+    for (let power of member.powers){
         // Créer une balise <li> pour chaque superpouvoir
         let powerItem = document.createElement('li');
         powerItem.textContent = power;
@@ -183,3 +183,56 @@ for (let member of heroes.members) {
     section.appendChild(article);
 }
 // Fin de la boucle
+
+/**
+* Corrigé de Pierre 
+* / je définit ma section
+let mySection=document.querySelector('section');
+for(let hero of heroes.members){
+    // je crée la balise article
+    let myArticle=document.createElement('article');
+    // je crée la balise h2
+    let myH2=document.createElement('h2');
+    // je lui mets en contenu le nom du hero
+    myH2.textContent=hero.name;
+
+    // j'ajoute le h2 dans l'article
+    myArticle.appendChild(myH2);
+    // j'ajoute l'article dans la section
+    mySection.appendChild(myArticle);
+    // je crée un p pour l'identité secrete
+    let pIdentity=document.createElement('p');
+    // son contenu :
+    pIdentity.textContent=hero.secretIdentity;
+    // je l'ajoute dans l'article
+    myArticle.appendChild(pIdentity);
+
+    // j'ajoute un p pour l'age
+    let pAge=document.createElement('p');
+    // son contenu
+    pAge.textContent=hero.age;
+    // je l'ajoute à l'article
+    myArticle.appendChild(pAge);
+
+    // je crée un p Pouvoirs
+    let pPouvoirs=document.createElement('p');
+    // son contenu
+    pPouvoirs.textContent='Pouvoirs :';
+    // je l'ajoute à article
+    myArticle.appendChild(pPouvoirs);
+
+    // je crée une balise ul
+    let myUl=document.createElement('ul');
+    // je l'ajoute à l'article
+    myArticle.appendChild(myUl);
+
+    for (let power of hero.powers){
+        // je crée une balise li
+        let myLi=document.createElement('li');
+        // son contenu
+        myLi.textContent=power;
+        //j'ajoute la li dans l'ul
+        myUl.appendChild(myLi);
+    }
+}
+*/

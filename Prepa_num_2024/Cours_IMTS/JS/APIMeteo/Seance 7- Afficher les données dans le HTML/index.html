@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/script.js" defer></script>
+    <title>API - Meteo - 7- Afficher les données dans le HTML</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Ville : </legend>
+        <form name="cityForm" method="GET" action="">
+            <label for="cityField">Ville : </label>
+            <input type="text" id="cityField" name="city"/>
+            <input type="submit" value="Chercher" />
+        </form> 
+    </fieldset>
+    <div id="weather">
+        <p>
+            <strong>Ville : </strong>
+            <span id="ville"></span>
+        </p>
+        <p>
+            <strong>Résumé : </strong>
+            <span id="resume"></span>
+        </p>
+        <p>
+            <strong>Température : </strong>
+            <span id="temp"></span>
+        </p>
+    </div>
+</body>
+</html>
